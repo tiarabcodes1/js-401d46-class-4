@@ -21,8 +21,9 @@ In the works:
 - Multiple song choices from your music library
 
 <h2>Layout<h2>
-<a href="url"><img src="https://user-images.githubusercontent.com/90294860/168856844-1b9eab50-a139-4c25-a910-210b4166efcc.jpeg" align="center" height="400" width="200" ></a>
-<a href="url"><img src="https://user-images.githubusercontent.com/90294860/168857589-90d4388c-bb8d-4a9e-af6c-8e5c134f5158.jpeg" align="center" height="400" width="200" ></a>
+<a href="url"><img width="370" alt="Screen Shot 2022-05-17 at 12 12 58 PM" src="https://user-images.githubusercontent.com/90294860/168859267-ea51486d-9f36-420a-bcb8-eb3bc2b5a2e7.png"></a>
+<a href="url"><img width="370" alt="Screen Shot 2022-05-17 at 12 13 44 PM" src="https://user-images.githubusercontent.com/90294860/168859447-b4b48fb6-ac76-4e75-b5aa-acc3c9a2ca88.png">
+</a>
 
 ## Contributions:
 
