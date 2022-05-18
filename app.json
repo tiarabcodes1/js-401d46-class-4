@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "js-401d46-class-41",
+    "name": "Tee's Tunes",
     "slug": "js-401d46-class-41",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/t.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -17,8 +17,21 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Tee's Tunes to access your camera.",
+          "cameraPermission": "Allow Tee's Tunes to save pictures.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ]
+  ,
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier":"com.tiarabcodes.teestunes",
+      "buildNumber": "1.0.0",
       "infoPlist":{
         "UIBackgroundModes":[
           "audio"
@@ -26,6 +39,8 @@
       }
     },
     "android": {
+      "package": "com.tiarabcodes.teestunes",
+      "versionCode":1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

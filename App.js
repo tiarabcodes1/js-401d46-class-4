@@ -1,6 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import TeesTunes from './components/TeesTunes';
+import {
+  NativeBaseProvider,
+  Box
+} from 'native-base'
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
   console.log("App Executed")
