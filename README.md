@@ -25,8 +25,23 @@ Thank you for checking out the first version of the Tee's Tunes music playback a
 
 ## Layout
 
-<a href="url"><img width="370" alt="Screen Shot 2022-05-17 at 12 12 58 PM" src="https://user-images.githubusercontent.com/90294860/168859267-ea51486d-9f36-420a-bcb8-eb3bc2b5a2e7.png"></a>
-<a href="url"><img width="370" alt="Screen Shot 2022-05-17 at 12 13 44 PM" src="https://user-images.githubusercontent.com/90294860/168859447-b4b48fb6-ac76-4e75-b5aa-acc3c9a2ca88.png">
+**Dark Mode**
+
+<a href="url"><img width="370"  src="https://user-images.githubusercontent.com/90294860/169092381-d64c03e2-00fc-4053-b04a-e863427f32de.jpeg"></a>
+
+**Light Mode**
+
+<a href="url"><img width="370" src="https://user-images.githubusercontent.com/90294860/168859447-b4b48fb6-ac76-4e75-b5aa-acc3c9a2ca88.png">
+</a>
+
+**Streaming upon `Play Music` click**
+
+<a href="url"><img width="370" alt="StreamPage" src="https://user-images.githubusercontent.com/90294860/169092475-5288f070-b39c-4b70-91f2-d8e649879c3d.jpeg">
+</a>
+
+**Like Page renders song you `heart`**
+
+<a href="url"><img width="370" alt="StreamPage" src="https://user-images.githubusercontent.com/90294860/169094640-56c517b7-640d-4979-97eb-e807a2cebed1.jpeg">
 </a>
 
 
