@@ -2,7 +2,7 @@ const ColorMode = {
   light:{
     colorMode: "light",
     color: "black",
-    background: "white",
+    background: '#581845',
   },
   dark: {
     colorMode: "dark",

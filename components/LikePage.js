@@ -15,7 +15,7 @@ export default function LikePage({ route }) {
       {
        songInfo ? 
       <Text style={[ {fontSize: 20},{color: colorMode.color},{backgroundColor: colorMode.background}]}>{JSON.stringify(songInfo)} by {JSON.stringify(artistName)}</Text>
-      : <Text>Go like some songs!</Text>}
+      : <Text style={[ {fontSize: 20},{color: colorMode.color},{backgroundColor: colorMode.background}]}>Go like some songs!</Text>}
       <StatusBar style="light" />
     </View>
   );
