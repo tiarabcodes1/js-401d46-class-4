@@ -23,6 +23,8 @@ Thank you for checking out the first version of the Tee's Tunes music playback a
 - The `thumbs up` button allows you to access the songs that you liked 
 - To navigate back home simply press the arrow at the top left of the screen
 
+Download the [Expo go app](https://expo.dev/@tiarabcodes1/js-401d46-class-41), scan the [QR Code](https://expo.dev/@tiarabcodes1/js-401d46-class-41) via camera for IOS users, or the app for android users, turn your volume up and explore.
+
 **Happy Listening!**
 
 
