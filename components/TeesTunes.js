@@ -1,7 +1,7 @@
 import * as React from 'react';
 import colorModeContext from '../assets/config/ColorModeContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { View, Text, SafeAreaView, Switch, Alert, Vibration, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, Switch, Alert, Vibration, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { Audio } from 'expo-av';
 import tunes from '../assets/music-data/data'
@@ -91,7 +91,7 @@ export default function TeesTunes({ navigation }) {
   return (
 
    
-        <SafeAreaView style={[{backgroundColor: colorMode.background}]}>
+        <SafeAreaView style={[ styles.container, {backgroundColor: colorMode.background}]}>
               <Switch value={mode} 
               onValueChange = {(value) =>{
               setMode(value);
@@ -137,24 +137,23 @@ export default function TeesTunes({ navigation }) {
   )
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     marginTop: 100,
-//     flex: 1,
-//     backgroundColor: '#581845',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   titleContainer: {
-//     paddingTop: 300,
-//     flex: 1,
-//     alignItems: 'center',
-//   },
-//   contentContainer: {
-//     flex: 1,
-//     // backgroundColor: '#fff',
-//     fontWeight: 'bold',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   }
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#581845',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  titleContainer: {
+    paddingTop: 300,
+    flex: 1,
+    alignItems: 'center',
+  },
+  contentContainer: {
+    flex: 1,
+    // backgroundColor: '#fff',
+    fontWeight: 'bold',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});
