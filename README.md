@@ -4,15 +4,19 @@ Thank you for checking out the first version of the Tee's Tunes music playback a
 
 ## Features Include:
 
-- The ability to start a song upon button click
-- The ability to Stop the song upon button click
+- Start a song upon button click
+- Stop the song upon button click
+- Save the song to a like page upon `heart` button click
+- View saved song upon `thumbs up` button click
+- Navigate back to home via the button on screen top-left
 
 ## How To Use:
 
 - Open up Expo app
 - Load the application onto your phone
 - At the top of the screen you will see the toggle switch that changes theme from light to dark across all pages.
-- Simply press `Play Music` to hear Jason Shaw's Ectoplasm
+- Make sure your phone is off of the *mute* setting and turned up to stream music.
+- Once your volume is ready, press `Play Music` to hear Jason Shaw's Ectoplasm.
 - To end the stream mid-play press `Stop Music`
 - You will notice a Vibration upon button click of the `heart` button, that saves your song to the like page.
 - A notification showing the saved song appears and can be dismissed by pressing 'OK'
@@ -41,6 +45,13 @@ Thank you for checking out the first version of the Tee's Tunes music playback a
 
 **Alert Message upon `heart` click**
 
+<a href="url"><img width="370" alt="StreamPage" src="https://user-images.githubusercontent.com/90294860/169102226-d4eb9b96-77d3-4b29-9111-8ef07c838efa.jpg">
+</a>
+
+**Closing the alert**
+
+<a href="url"><img width="370" alt="StreamPage" src="https://user-images.githubusercontent.com/90294860/169102374-2609f4d5-e7af-4556-b264-5a4c61ae799e.jpg">
+</a>
 
 **Like Page renders song you `heart`**
 
