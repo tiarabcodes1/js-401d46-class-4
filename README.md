@@ -41,6 +41,8 @@ In the works:
   - TeesTunes.js renders buttons and stream functionality.
   - useSpotifyAPI.js renders my favorite public holiday.
 
+https://reactnavigation.org/docs/navigating
+
 ## Contributions
 
 <a href="https://audionautix.com/">Creative Commons Music by Jason Shaw on Audionautix.com</a>
