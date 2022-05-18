@@ -1,20 +1,17 @@
 import * as React from 'react';
-import colorModeContext from '../assets/config/ColorModeContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { View, Text, SafeAreaView, Switch, Alert, Vibration, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTheme } from '@react-navigation/native';
 import { Audio } from 'expo-av';
 import tunes from '../assets/music-data/data'
 import { LinearGradient } from 'expo-linear-gradient';
-import * as Font from 'expo-font';
 import { EventRegister } from 'react-native-event-listeners';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import ColorModeContext from '../assets/config/ColorModeContext.js';
 
 export default function TeesTunes({ navigation }) {
-  console.log("RENDERING SOUNDS")
- const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
+
  const colorMode = React.useContext(ColorModeContext)
+
   //Contains the state of the music for user interaction
   const [sound, setSound] = React.useState();
   const [showContent, setShow] = React.useState(false);
@@ -22,27 +19,21 @@ export default function TeesTunes({ navigation }) {
   const [mode, setMode] = React.useState(false);
 
   async function playMusic() {
-    console.log('Loading Stream');
     const { sound } = await Audio.Sound.createAsync(
       require('../assets/Ectoplasm.mp3'),
       );
       setSound(sound);
-      
-      console.log('Playing Stream');
       await sound.playAsync();
       setShow(true)
   }
 
   //TODO: Convert to a pause function
   async function stopMusic() {
-    console.log('Ending Stream')
     await sound.pauseAsync();
     setShow(false)
   }
+ 
 
-  
-
-  //TODO: Create function to allow vibration upon button click
   const handleLikeAlert = (songTitle, artistName) => {
     //.alert() takes title, message, buttons options, etc
     Alert.alert(
@@ -68,14 +59,12 @@ export default function TeesTunes({ navigation }) {
     setLikedSongs({title: `${songTitle}`, artist: `${artistName}`})
     Vibration.vibrate()
   };
-  console.log(likedSongs)
   //TODO: Create background play functionality
 
   // React. accesses the global scope of react to access useEffect
   React.useEffect(() => {
     return sound
       ? () => {
-        console.log('Unloading Sound');
         sound.unloadAsync();
       }
       : undefined;
@@ -151,7 +140,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    // backgroundColor: '#fff',
     fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',

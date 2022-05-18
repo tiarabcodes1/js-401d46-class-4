@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import ColorModeContext from './assets/config/ColorModeContext.js'
 import ColorMode from './assets/config/ColorMode.js';
 import * as React from 'react';
@@ -34,12 +33,9 @@ export default function App() {
     <ColorModeContext.Provider value={mode === true ? ColorMode.dark : ColorMode.light}>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-    {/* <View style={styles.container}> */}
       {/* Takes in the prop it will render, take into stack, */}
     <Stack.Screen name="Home" component={TeesTunes} />
     <Stack.Screen name="Likes" component={LikePage} initialParams={{ artists: 'No Songs Yet' }}/>
-      {/* <StatusBar style="light" />
-    </View> */}
     </Stack.Navigator>
     </NavigationContainer>
     </ColorModeContext.Provider>

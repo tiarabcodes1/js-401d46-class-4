@@ -6,7 +6,7 @@ import ColorModeContext from '../assets/config/ColorModeContext';
 
 export default function LikePage({ route }) {
   const colorMode = React.useContext(ColorModeContext);
-  console.log("LIKE SCREEN",songInfo)
+
   const { songInfo, artistName} = route.params;
 
   return (

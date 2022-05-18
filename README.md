@@ -39,6 +39,9 @@ Thank you for checking out the first version of the Tee's Tunes music playback a
 <a href="url"><img width="370" alt="StreamPage" src="https://user-images.githubusercontent.com/90294860/169092475-5288f070-b39c-4b70-91f2-d8e649879c3d.jpeg">
 </a>
 
+**Alert Message upon `heart` click**
+
+
 **Like Page renders song you `heart`**
 
 <a href="url"><img width="370" alt="StreamPage" src="https://user-images.githubusercontent.com/90294860/169094640-56c517b7-640d-4979-97eb-e807a2cebed1.jpeg">
