@@ -1,26 +1,25 @@
 import * as React from 'react';
+import colorModeContext from '../assets/config/ColorModeContext';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { View, Text, SafeAreaView, Button, Alert, Vibration, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, Switch, Alert, Vibration, TouchableOpacity } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 import { Audio } from 'expo-av';
 import tunes from '../assets/music-data/data'
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
-import useSpotifyAPI from '../hooks/useSpotifyAPI'
-import * as MediaLibrary from 'expo-media-library';
+import { EventRegister } from 'react-native-event-listeners';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import ColorModeContext from '../assets/config/ColorModeContext.js';
 
-export default function TeesTunes() {
+export default function TeesTunes({ navigation }) {
   console.log("RENDERING SOUNDS")
-
-  let response = useSpotifyAPI();
-  console.log("SHOW", response)
-
-  const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
-
+ const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
+ const colorMode = React.useContext(ColorModeContext)
   //Contains the state of the music for user interaction
   const [sound, setSound] = React.useState();
   const [showContent, setShow] = React.useState(false);
-  // const [status, requestPermission] = React.useState(null);
+  const [likedSongs, setLikedSongs] = React.useState({artist: '', title: ''});
+  const [mode, setMode] = React.useState(false);
 
   async function playMusic() {
     console.log('Loading Stream');
@@ -41,27 +40,17 @@ export default function TeesTunes() {
     setShow(false)
   }
 
-  async function getUserSmile () {
-    const res = await ImagePicker.getCameraPermissionsAsync();
-    if (res.granted) {
-      console.log(music)
-      let music = await MediaLibrary.getAssetsAsync({
-        mediaType: 'image'
-      })
-      .then((albums) => console.log(albums))
-      .catch((err) => console.warn(err))
-    }
-  }
+  
 
   //TODO: Create function to allow vibration upon button click
-  const handleLikeAlert = (songTitle) => {
+  const handleLikeAlert = (songTitle, artistName) => {
     //.alert() takes title, message, buttons options, etc
     Alert.alert(
       "You must really like this tune!",
       "This has been added to your saved songs",
       [
         {
-          text: `${songTitle}`,
+          text: `${artistName}: ${songTitle}`,
           onPress: () => Alert.alert("Song Liked"),
           style: "cancel",
         },
@@ -76,9 +65,10 @@ export default function TeesTunes() {
 
       }
     );
+    setLikedSongs({title: `${songTitle}`, artist: `${artistName}`})
     Vibration.vibrate()
   };
-
+  console.log(likedSongs)
   //TODO: Create background play functionality
 
   // React. accesses the global scope of react to access useEffect
@@ -97,13 +87,19 @@ export default function TeesTunes() {
     }
   };
 
+  
   return (
 
-
-        <SafeAreaView >
+   
+        <SafeAreaView style={[{backgroundColor: colorMode.background}]}>
+              <Switch value={mode} 
+              onValueChange = {(value) =>{
+              setMode(value);
+              EventRegister.emit("changeTheme", value)
+              }}/>
           <View >
             <Ionicons name="radio" size={50} color='#FFC300' />
-            <Text style={{  fontSize: 50, color: '#fff' }}>Tee's Tunes</Text>
+            <Text style={[ {fontSize: 30},{color: colorMode.color},{backgroundColor: colorMode.background}]}>Tee's Tunes</Text>
           </View>
           <View >
 
@@ -112,7 +108,7 @@ export default function TeesTunes() {
             </TouchableOpacity>
 
             {showContent == true ?
-              <Text style={{ fontSize: 10, color: '#fff' }}> You are Jamming to {tunes.data.title}</Text>
+              <Text style={[ {fontSize: 20},{color: colorMode.color},{backgroundColor: colorMode.background}]}> You are Jamming to {tunes.data.title}</Text>
               : null}
             {/* onPress handles user tap on content */}
             <TouchableOpacity onPress={stopMusic}>
@@ -120,12 +116,19 @@ export default function TeesTunes() {
             </TouchableOpacity>
           </View>
             <View >
-            <FontAwesome.Button name="heart" onPress={() => handleLikeAlert(tunes.data.title)} />
+            <FontAwesome.Button name="heart" onPress={() => handleLikeAlert(tunes.data.title, tunes.data.artist)} />
+            {/* navigation is passed to every screen pushes a new route to the native stack navigator if it's not already in the stack, otherwise it jumps to that screen */}
+            <FontAwesome.Button 
+            name="thumbs-up" 
+            onPress={() => {
+              navigation.navigate('Likes',{
+                songInfo: `${likedSongs.title}`,
+                artistName: `${likedSongs.artist}`
+              });
+            }} />
             {showContent == false ?
-              <Text style={{ fontSize: 10, color: '#fff' }} >Compare how happy you are before and after playing this song!</Text>
+              <Text style={[ {fontSize: 20},{color: colorMode.color},{backgroundColor: colorMode.background}]} >Go Checkout the songs you liked!</Text>
               : null}
-              
-            <FontAwesome.Button name="camera" onPress={getUserSmile} />
             </View>
           <View />
         </SafeAreaView>
